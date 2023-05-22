@@ -1,6 +1,6 @@
 public class Conta{
 
-    private String nomeCliente;
+    String nomeCliente;
     private int numConta;
     public float saldo;
 
@@ -26,8 +26,14 @@ public class Conta{
         saldo -= valor;
     }
 
-    public void deposito( float valor){
-        saldo += valor;
+    public void deposito( double valorDeposito){
+        saldo += valorDeposito;
+    }
+
+    public void transferir(Conta contaDestino, double valorTransferencia) {
+    }
+
+    public void sacar(double valorSaque) {
     }
 
 }
