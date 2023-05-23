@@ -23,18 +23,21 @@ public class Conta{
 
     //metoDO SAQUE
     //utilizar polimorfismo para utilizar outro método com parametros diferentes
-    public bool sacar( ){
-        //saldo -= valor;
-        float valor = info.nextInt();
-        if(saldo <= valor){
-
+    public bool sacar(float valor ){
+        saldo -= valor;
+        if(this.saldo <= valor){
+            sacar(valor);
+            Object destino;
+            destino.deposita(valor);
+            return true;
         } else {
-
+             System.out.println("Saldo insuficiente");
+             return false;
         }
 
     }
     //a dirença no polimorfismo está no tipo do parametro passado
-    public bool sacar(float){
+    public bool sacar(){
 
     }
 

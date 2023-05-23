@@ -36,34 +36,7 @@ public class Banco {
 
     public Object FindConta(int numero) {
         for (Conta c : contas) {
-            if
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            (c.getNumero() == numero){
+            if(c.getNumero() == numero){
                 return c;
             }
         }
