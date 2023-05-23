@@ -1,54 +1,54 @@
-public class Conta{
+public class Conta {
 
-    String nomeCliente;
+    private String nomeCliente;
     private int numero;
     private float saldo;
 
-    public Conta(String nomeCliente, int _numero, float _saldo){
+    public Conta(String nomeCliente, int numero, float saldo) {
         this.nomeCliente = nomeCliente;
-        this.saldo = 0;
-        this.numero = 1;
+        this.numero = numero;
+        this.saldo = saldo;
     }
 
-    public String getNomeCliente(){
+    public String getNomeCliente() {
         return nomeCliente;
     }
-    public int getNumero(){
+
+    public int getNumero() {
         return numero;
     }
-    public float getSaldo(){
+
+    public float getSaldo() {
         return saldo;
     }
-    
 
-    //metoDO SAQUE
-    //utilizar polimorfismo para utilizar outro método com parametros diferentes
-    public bool sacar(float valor ){
-        saldo -= valor;
-        if(this.saldo <= valor){
-            sacar(valor);
-            Object destino;
-            destino.deposita(valor);
+    public boolean sacar(double valorSaque) {
+        if (saldo >= valorSaque) {
+            saldo -= valorSaque;
             return true;
         } else {
-             System.out.println("Saldo insuficiente");
-             return false;
+            System.out.println("Saldo insuficiente");
+            return false;
         }
-
-    }
-    //a dirença no polimorfismo está no tipo do parametro passado
-    public bool sacar(){
-
     }
 
-    public void deposito( double valorDeposito){
+    public void deposito(double valorDeposito) {
         saldo += valorDeposito;
     }
 
     public void transferir(Conta contaDestino, double valorTransferencia) {
+        if (this.sacar(valorTransferencia)) {
+            contaDestino.deposito(valorTransferencia);
+            System.out.println("Transferência realizada com sucesso.");
+        } else {
+            System.out.println("Transferência não realizada.");
+        }
     }
 
-    public void sacar(double valorSaque) {
+    /**
+     * @param valorSaque
+     */
+    public void sacar(float valorSaque) {
+        this.sacar(valorSaque);
     }
-
 }
