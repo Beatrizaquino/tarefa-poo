@@ -1,20 +1,20 @@
 public class Conta{
 
     String nomeCliente;
-    private int numConta;
-    public float saldo;
+    private int numero;
+    private float saldo;
 
-    public Conta(String nomeCliente, int _numConta, float _saldo){
+    public Conta(String nomeCliente, int _numero, float _saldo){
         this.nomeCliente = nomeCliente;
         this.saldo = 0;
-        this.numConta = 1;
+        this.numero = 1;
     }
 
     public String getNomeCliente(){
         return nomeCliente;
     }
-    public int getNumConta(){
-        return numConta;
+    public int getNumero(){
+        return numero;
     }
     public float getSaldo(){
         return saldo;
@@ -22,8 +22,20 @@ public class Conta{
     
 
     //metoDO SAQUE
-    public void saque( float valor){
-        saldo -= valor;
+    //utilizar polimorfismo para utilizar outro método com parametros diferentes
+    public bool sacar( ){
+        //saldo -= valor;
+        float valor = info.nextInt();
+        if(saldo <= valor){
+
+        } else {
+
+        }
+
+    }
+    //a dirença no polimorfismo está no tipo do parametro passado
+    public bool sacar(float){
+
     }
 
     public void deposito( double valorDeposito){
